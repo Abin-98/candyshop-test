@@ -11,7 +11,7 @@ const Cart = (props) => {
     <Modal onClick={props.onClick}>
       <ul className={classes.cartItems}>{cartCtx.items.map((item)=>{
         return(<li>
-          {item.name}, {item.description}, {item.price}, q: {item.quantity}
+          {item.name}, {item.description}, {item.price}, L: {item.L}, M: {item.M}, S: {item.S}
         </li>)
       })}</ul>
       <span>Total Amount: {cartCtx.totalAmount}</span>
