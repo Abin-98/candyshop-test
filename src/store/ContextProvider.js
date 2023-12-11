@@ -13,20 +13,25 @@ const ContextProvider = (props) => {
     }
     else{
       const dup=[...items]
-      dup[index].quantity+=Number(item.quantity);
+      dup[index].L+=Number(item.L);
+      dup[index].M+=Number(item.M);
+      dup[index].S+=Number(item.S);
       setItems([...dup]);
     }
   };
   const addToListFn=(item)=>{
     setInputItem((prev)=>[...prev,item]);
   }
-
+  const clearItemsHandler=()=>{
+    setItems([])
+  }
   const cartContext = {
     items: items,
     list:inputItem,
     totalAmount: 0,
     addToList:addToListFn,
     addItem: addItemHandler,
+    clearItems:clearItemsHandler
   };
 
 

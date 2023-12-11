@@ -7,7 +7,7 @@ const HeaderCartButton = (props) => {
     props.onClick();
   }
   const total=cartCtx.items.reduce((val,item)=>{
-    return val+Number(item.quantity);
+    return val+Number(item.L)+Number(item.M)+Number(item.S);
   },0)
   return (
     <button className={classes.btn} onClick={showCart}>
