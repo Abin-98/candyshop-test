@@ -1,15 +1,18 @@
-import React from 'react'
-
+import React,{useContext} from 'react'
+import CartContext from '../store/cart-context';
+import classes from './HeaderCartButton.module.css';
 const HeaderCartButton = (props) => {
-  
+  const cartCtx=useContext(CartContext)
   const showCart=()=>{
     props.onClick();
   }
-
+  const total=cartCtx.items.reduce((val,item)=>{
+    return val+Number(item.quantity);
+  },0)
   return (
-    <button onClick={showCart}>
+    <button className={classes.btn} onClick={showCart}>
       <span>Cart</span>
-      <span>0</span>
+      <span>{total}</span>
     </button>
   )
 }

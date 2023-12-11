@@ -1,0 +1,8 @@
+.li{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+}

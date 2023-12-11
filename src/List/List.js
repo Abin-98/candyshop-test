@@ -1,17 +1,27 @@
-import React ,{useContext} from 'react'
-import ContextProvider from '../store/ContextProvider'
-import ListItem from './ListItem';
+import { useContext } from "react";
+import CartContext from "../store/cart-context";
+import ListItem from "./ListItem";
 
 const List = () => {
-  const cartCtx=useContext(ContextProvider);
-
+  const cartCtx = useContext(CartContext);
   return (
     <div>
-      {/* {cartCtx.map((item)=>{
-        return(<ListItem name={item.name} description={item.description} price={item.price}/>)
-      })} */}
+      {cartCtx.list.map((item) => {
+        return (
+          <ListItem
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+            L={item.L}
+            M={item.M}
+            S={item.S}
+          />
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
